@@ -4,17 +4,19 @@ import { Provider } from 'react-redux';
 import { store } from './app/store';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { MantineProvider } from '@mantine/core';
+
 import './index.css';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
 
 root.render(
-  <React.StrictMode>
+  <MantineProvider withGlobalStyles withNormalizeCSS>
     <Provider store={store}>
       <App />
     </Provider>
-  </React.StrictMode>
+  </MantineProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
